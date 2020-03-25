@@ -1,0 +1,3 @@
+com.register.move.plugin.core.RegisterClient=\
+com.register.move.service.plugin.eureka.client.EurekaNamingService,\
+com.register.move.service.plugin.zookeeper.client.ZookeeperNamingClient

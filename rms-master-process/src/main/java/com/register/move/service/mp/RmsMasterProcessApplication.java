@@ -1,0 +1,13 @@
+package com.register.move.service.mp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class RmsMasterProcessApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(RmsMasterProcessApplication.class, args);
+    }
+
+}
