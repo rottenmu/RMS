@@ -5,6 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Nullable;
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,14 +17,15 @@ import java.util.stream.Collectors;
 @Slf4j
 public class RegisterMoveConfig {
 
+   @Valid
     private String sourceServerAddr;
-
+    @Valid
     private String destinationServerAddr;
-
+    @Valid
     private String sourceRegisterType;
-
+    @Valid
     private String destinationRegisterType;
-
+    @Valid
     private List<String> serviceNames;
 
     /**
@@ -29,14 +33,14 @@ public class RegisterMoveConfig {
      */
     private String serviceNameStr;
 
-
+    @Valid
     private  String destDriverClass ;
+    @Valid
     private  String sourceDriverClass;
+    @Valid
     private  String region;
+    @Valid
     private  String group;
-    public static void main(String[] args) {
-
-    }
 
     public List<String> getServiceNames() {
         if(!this.serviceNameStr.contains(",")){

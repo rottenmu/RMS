@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentMap;
 
 public enum TaskType {
 
-    ZKTASK(RegisterType.ZOOKEEPER,"com.register.move.service.plugin.zookeeper.listener.ZookeeperEventListener"),
+    ZKTASK(RegisterType.ZOOKEEPER,"com.register.move.service.plugin.zookeeper.listener.ZookeeperTask"),
     EUREKATASK(RegisterType.EUREKA,"com.register.move.service.plugin.eureka.task.EurekaTask"),
     CONSULTASK(RegisterType.CONSUL,"com.register.move.service.plugin.consul.domain.ConsulTask"),
     NACOSTASK(RegisterType.NACOS,"com.register.move.service.plugin.nacos.task.NacosTask");

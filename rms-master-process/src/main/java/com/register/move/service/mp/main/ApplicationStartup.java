@@ -14,9 +14,7 @@ import com.register.move.service.event.DaoEvent;
 import com.register.move.service.listener.GenericEventListener;
 import com.register.move.service.mp.config.RegisterMoveConfig;
 import com.register.move.service.mp.utils.MPUtils;
-import com.register.move.service.plugin.zookeeper.event.ZookeeperEvent;
 import com.register.move.service.processor.ServiceMetaDataOperationProcessor;
-import com.register.move.service.plugin.zookeeper.listener.ZookeeperEventListener;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +24,17 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ *
+ * @author  shengjie zhaao
+ * @description when app starting get registry client,
+ * and get service  instance from registry ,finally publish a BaseEvent{@link BaseEvent}
+ */
 @Slf4j
 @Component
 @Order(6)
@@ -88,7 +91,6 @@ public class ApplicationStartup implements CommandLineRunner {
                            event.setRunnable((Runnable) destListenerClass.newInstance());
                            processor.setBaseEvent(event);
                            eventBus.post(daoEvent);
-                           Thread.currentThread().setName("appstartUp");
                        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
                            e.printStackTrace();
                        } catch (ClassNotFoundException e) {

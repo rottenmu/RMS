@@ -10,7 +10,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 @Slf4j
-public class ZookeeperEventListener implements Runnable {
+public class ZookeeperTask implements Runnable {
 
     protected BaseEvent event;
 

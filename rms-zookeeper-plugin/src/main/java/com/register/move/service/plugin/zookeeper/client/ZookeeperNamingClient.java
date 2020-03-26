@@ -49,18 +49,6 @@ public class ZookeeperNamingClient implements RegisterClient<ServiceInstance<Zoo
     }
 
 
-    public static void main(String[] args) {
-
-        RegisterClientConfig clientConfig = new RegisterClientConfig();
-        clientConfig.setServerAddr("106.13.201.243:2181");
-        ZookeeperNamingClient namingClient = new ZookeeperNamingClient(clientConfig);
-        try {
-            List<ServiceInstance<ZookeeperInstance>> serviceInstances = namingClient.serviceInstanceInfo(null, null);
-            System.out.println(serviceInstances);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public void registerInstance(ServiceInstance<ZookeeperInstance> serviceInstance) {

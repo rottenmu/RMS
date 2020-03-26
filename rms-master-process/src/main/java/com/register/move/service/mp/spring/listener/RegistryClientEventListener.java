@@ -25,6 +25,10 @@ import java.util.concurrent.ThreadFactory;
 
 import static com.register.move.service.core.client.RegistryNamingClientFactory.*;
 
+/**
+ * @author  shengjie zhao
+ * @description  create Registry client and put the  Map{@link RegisterCache}
+ */
 @Component
 @Order(5)
 public class RegistryClientEventListener implements ApplicationListener<ContextRefreshedEvent> {

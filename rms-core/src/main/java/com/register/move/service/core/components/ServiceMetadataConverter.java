@@ -12,10 +12,6 @@ import java.util.stream.Stream;
 
 public class ServiceMetadataConverter {
 
-    public static void main(String[] args) {
-        List<String> strings = Arrays.asList("s", "a", "t");
-        strings.listIterator().forEachRemaining(s -> strings.remove(s));
-    }
     public static ListIterator<StandardServiceMetadata> converterStandard(Iterable<InstanceInfo> infoIterable){
 
         List<StandardServiceMetadata> metadataList = new ArrayList<>();

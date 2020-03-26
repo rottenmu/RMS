@@ -42,27 +42,6 @@ public class NacosHeartBeatReactor  {
         this.nacosBeat.remove(key);
     }
 
-    public static void main(String[] args) throws NoSuchFieldException {
-        Properties properties = new Properties();
-        properties.put("serverAddr","106.13.201.243");
-        NacosNamingService service = new NacosNamingService(properties);
-        BeatReactor beatReactor = service.getBeatReactor();
-        try {
-            String namespace = NacosUtils.getFieldVal(service, "namespace");
-            String endpoint = NacosUtils.getFieldVal(service, "endpoint");
-            NamingProxy proxy = new NamingProxy(namespace,endpoint,String.valueOf(properties.get("serverAddr")));
-            BeatInfo beatInfo  = new BeatInfo();
-            beatInfo.setIp("192.168.43.42");
-            beatInfo.setPort(3004);
-            beatInfo.setServiceName("eureka0");
-            beatInfo.setWeight(1.0D);
-            long l = proxy.sendBeat(beatInfo);
-            System.out.println(l);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-    }
     class  BeatTask implements Runnable{
 
         private  BeatInfo beatInfo;

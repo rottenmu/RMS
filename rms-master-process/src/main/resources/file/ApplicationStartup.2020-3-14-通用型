@@ -16,7 +16,7 @@ import com.register.move.service.mp.config.RegisterMoveConfig;
 import com.register.move.service.mp.utils.MPUtils;
 import com.register.move.service.plugin.zookeeper.event.ZookeeperEvent;
 import com.register.move.service.processor.ServiceMetaDataOperationProcessor;
-import com.register.move.service.plugin.zookeeper.listener.ZookeeperEventListener;
+import com.register.move.service.plugin.zookeeper.listener.ZookeeperTask;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;

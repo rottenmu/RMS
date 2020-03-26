@@ -18,6 +18,10 @@ import java.util.Objects;
 import java.util.concurrent.*;
 
 
+/**
+ * @author  shengjie zhao
+ * @description avoid service is  false  health-UP
+ */
 public class ServiceTestThread implements Callable<Map> {
 
 

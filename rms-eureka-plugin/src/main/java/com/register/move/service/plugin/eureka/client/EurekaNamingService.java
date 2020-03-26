@@ -129,44 +129,5 @@ public class EurekaNamingService  implements RegisterClient<InstanceInfo, Eureka
         REGISTERMAP.put(RegisterType.EUREKA,eurekaHttpClient);
         return  this;
     }
-    public InstanceInfo buildSyncInstance(Map instance) {
-        DataCenterInfo dataCenterInfo = new MyDataCenterInfo(DataCenterInfo.Name.MyOwn);
-        HashMap<String, String> metadata = new HashMap<>(16);
-        metadata.putAll(instance);
-        metadata.replace("homePageUrl","http://192.168.1.137:3004");
-        metadata.replace("statusPageUrl","http://192.168.1.137:3004/actuator/info");
-        metadata.replace("healthCheckUrl","http://192.168.1.137:3004/actuator/health");
-
-        String serviceName = metadata.get("vipAddress");
-        return new InstanceInfo(
-                metadata.get("instanceId"),
-                serviceName,
-                null,
-                metadata.get("ipAddr"),
-                null,
-                new InstanceInfo.PortWrapper(true, 3004),
-                null,
-                metadata.get("homePageUrl"),
-                metadata.get("statusPageUrl"),
-                metadata.get("healthCheckUrl"),
-                null,
-                serviceName,
-                serviceName,
-                1,
-                dataCenterInfo,
-                metadata.get("ipAddr"),
-                InstanceInfo.InstanceStatus.UP,
-                InstanceInfo.InstanceStatus.UNKNOWN,
-                null,
-                new LeaseInfo(30, 90,
-                        0L, 0L, 0L, 0L, 0L),
-                false,
-                metadata,
-                System.currentTimeMillis(),
-                System.currentTimeMillis(),
-                null,
-                null
-        );
-    }
 
 }

@@ -5,6 +5,10 @@ import com.register.move.service.listener.EventListener;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+/**
+ * @author  shengjie zhao
+ * @description  accept all Registry Client'BaseEvent , callback registry  task to registry service Instance
+ */
 public class GenericEventListener implements EventListener<BaseEvent> {
 
 

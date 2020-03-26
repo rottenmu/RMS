@@ -21,7 +21,6 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Field;
 import java.util.Objects;
 
-@Component
 public class ServiceMetaDataOperationProcessor implements ServiceMetaDataOperation {
 
     private NacosConfig config;
@@ -40,7 +39,6 @@ public class ServiceMetaDataOperationProcessor implements ServiceMetaDataOperati
     @Override
     @Subscribe
     public  boolean publish(DaoEvent event) {
-        System.out.println(Thread.currentThread().getName());
         String group = event.getGroup();
         group = StringUtils.isNoneBlank() ? group : DEF;
         try {
